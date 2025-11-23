@@ -1,12 +1,12 @@
 // @ts-check
-import eslint from '@eslint/js'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
-import globals from 'globals'
 import tseslint from 'typescript-eslint'
+import eslint from '@eslint/js'
+import globals from 'globals'
 
 export default [
   {
-    ignores: ['eslint.config.mjs'],
+    ignores: ['eslint.config.mjs']
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
@@ -15,10 +15,9 @@ export default [
   {
     languageOptions: {
       globals: {
-        ...globals.node,
-        ...globals.jest,
+        ...globals.node
       },
-      ecmaVersion: 2020,
+      ecmaVersion: 2023,
       sourceType: 'module',
       parserOptions: {
         projectService: true,
