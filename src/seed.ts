@@ -17,8 +17,8 @@ async function run() {
 	if (userCount === 0) {
 		const ps = await bcrypt.hash('password', 10)
 		await userRepo.save([
-			{ email: 'admin@example.com', name: 'Admin User', password: ps, role: 'admin' },
-			{ email: 'user@example.com', name: 'Customer User', password: ps, role: 'customer' },
+			{ email: 'admin@example.com', name: 'Admin', password: ps, role: 'admin' },
+			{ email: 'user@example.com', name: 'Customer', password: ps, role: 'customer' },
 		])
 	}
 	const existingProducts = await productRepo.count()
@@ -30,7 +30,7 @@ async function run() {
 	const adjectives = ['Ultra', 'Mini', 'Pro', 'Eco', 'Smart', 'Fresh', 'Classic', 'Modern']
 	const nouns = ['Speaker', 'Lamp', 'Watch', 'Shirt', 'Book', 'Drone', 'Mixer', 'Backpack']
 	const batch: Partial<productEntity>[] = []
-	const total = Number(process.env.PRODUCTS_COUNT || '500')
+	const total = Number('500')
 	for (let i = 1; i <= total; i++) {
 		const title = `${adjectives[i % adjectives.length]} ${nouns[i % nouns.length]} ${i}`
 		const price = Math.round((Math.random() * 200 + 5) * 100) / 100
