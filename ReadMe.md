@@ -1,4 +1,4 @@
-# E-Commerce Platform - Comprehensive Technical Documentation
+# E-Shop - Comprehensive Technical Documentation
 ### Home
 <img src="/Frontend/img/Home.png">
 
