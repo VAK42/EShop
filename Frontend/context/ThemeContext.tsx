@@ -19,7 +19,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (initialized.current) {
       localStorage.setItem('theme', mode)
-      mode === 'dark' ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')
+      if (mode === 'dark') {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
     }
   }, [mode])
   const theme = useMemo(() => createTheme({
